@@ -183,6 +183,48 @@ window.addEventListener('load', () => {
   ScrollTrigger.refresh();
 });
 
+// Lock review stage min-height to the tallest slide per viewport width so carousel slides never shrink/bounce the page
+const reviewsWidgetStage = document.getElementById('reviews-widget-stage');
+const reviewsWidgetInner = reviewsWidgetStage ? reviewsWidgetStage.firstElementChild : null;
+if (reviewsWidgetStage && reviewsWidgetInner) {
+  let reviewsResizeTimeout;
+  let maxReviewsHeight = 0;
+  let lastViewportWidth = window.innerWidth;
+
+  const syncReviewsStageHeight = () => {
+    const innerHeight = reviewsWidgetInner.offsetHeight;
+    if (!innerHeight) return;
+
+    const style = getComputedStyle(reviewsWidgetStage);
+    const chromeHeight =
+      parseFloat(style.paddingTop) +
+      parseFloat(style.paddingBottom) +
+      parseFloat(style.borderTopWidth) +
+      parseFloat(style.borderBottomWidth);
+    const requiredHeight = Math.ceil(innerHeight + chromeHeight);
+
+    if (requiredHeight > maxReviewsHeight) {
+      maxReviewsHeight = requiredHeight;
+      reviewsWidgetStage.style.minHeight = `${maxReviewsHeight}px`;
+      clearTimeout(reviewsResizeTimeout);
+      reviewsResizeTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
+    }
+  };
+
+  const reviewsObserver = new ResizeObserver(syncReviewsStageHeight);
+  reviewsObserver.observe(reviewsWidgetInner);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth === lastViewportWidth) return;
+    lastViewportWidth = window.innerWidth;
+    maxReviewsHeight = 0;
+    reviewsWidgetStage.style.minHeight = '';
+    requestAnimationFrame(syncReviewsStageHeight);
+  });
+}
+
 // Initialize Masonry Layout
 if (grid) {
   const msnry = new Masonry(grid, {
