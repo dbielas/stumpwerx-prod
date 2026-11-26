@@ -280,6 +280,20 @@ const setupGallery = async () => {
     tapAction: 'close'
   });
 
+  lightbox.addFilter('domItemData', (itemData, element, linkEl) => {
+    if (linkEl && window.matchMedia('(max-width: 639px)').matches) {
+      const mobileSrc = linkEl.getAttribute('data-pswp-mobile-src');
+      const mobileW = Number(linkEl.getAttribute('data-pswp-mobile-w'));
+      const mobileH = Number(linkEl.getAttribute('data-pswp-mobile-h'));
+      if (mobileSrc && mobileW && mobileH) {
+        itemData.src = mobileSrc;
+        itemData.w = mobileW;
+        itemData.h = mobileH;
+      }
+    }
+    return itemData;
+  });
+
   new PhotoSwipeDynamicCaption(lightbox, {
     type: 'auto',
     captionContent: (slide) => slide.data.element.getAttribute('data-pswp-caption-content'),

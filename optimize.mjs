@@ -11,7 +11,7 @@ const INPUT_DIR = path.resolve(process.cwd(), 'src/img');
 const OUTPUT_DIR = path.resolve(process.cwd(), 'public/img');
 const MANIFEST_PATH = path.resolve(process.cwd(), '.optimize-manifest.json');
 
-const TARGET_WIDTHS = [800, 1200];
+const TARGET_WIDTHS = [480, 800, 1200];
 const AVIF_QUALITY = 42;
 const WEBP_QUALITY = 75;
 const VALID_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.tiff']);

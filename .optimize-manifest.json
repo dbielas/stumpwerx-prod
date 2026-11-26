@@ -1,7 +1,9 @@
 {
   "commercial-stump-removal-8018-macomb-mi": {
-    "hash": "5f2efa67c5304d136c09ac2f685cf715dd62404b4b1b0b6f433bf515c66daa87",
+    "hash": "dd84c97a831e6bb9d741f7f4bdcf1ced03f2b3aaeb21add2614854a55dafd6ee",
     "outputs": [
+      "commercial-stump-removal-8018-macomb-mi-480w-360h.avif",
+      "commercial-stump-removal-8018-macomb-mi-480w-360h.webp",
       "commercial-stump-removal-8018-macomb-mi-800w-600h.avif",
       "commercial-stump-removal-8018-macomb-mi-800w-600h.webp",
       "commercial-stump-removal-8018-macomb-mi-1200w-900h.avif",
@@ -9,8 +11,10 @@
     ]
   },
   "commercial-tree-trimming-new-baltimore-mi": {
-    "hash": "1b8a2e51416aa43988b2286c3e7a22dc7a12e4b5ed3b59f002812a61b346ae3a",
+    "hash": "13b22fca5543d28f0bd10350cd6e69404f1185bcacba6f03df73d188eda52f53",
     "outputs": [
+      "commercial-tree-trimming-new-baltimore-mi-480w-720h.avif",
+      "commercial-tree-trimming-new-baltimore-mi-480w-720h.webp",
       "commercial-tree-trimming-new-baltimore-mi-800w-1200h.avif",
       "commercial-tree-trimming-new-baltimore-mi-800w-1200h.webp",
       "commercial-tree-trimming-new-baltimore-mi-1200w-1800h.avif",
@@ -18,8 +22,10 @@
     ]
   },
   "emergency-storm-damage-cleanup": {
-    "hash": "cd12a2ddefece84edefb422a10e13a2ab6ba26da3795f40838338d018a25f315",
+    "hash": "a5a035f436e0a2b40544429fde41e47c9d5babfebcaeeb1b3f68d4eef8fd8e46",
     "outputs": [
+      "emergency-storm-damage-cleanup-480w-270h.avif",
+      "emergency-storm-damage-cleanup-480w-270h.webp",
       "emergency-storm-damage-cleanup-800w-450h.avif",
       "emergency-storm-damage-cleanup-800w-450h.webp",
       "emergency-storm-damage-cleanup-1200w-675h.avif",
@@ -27,8 +33,10 @@
     ]
   },
   "emergency-storm-damage-tree-removal-royal-oak-mi": {
-    "hash": "0ac21f28e9e225dda634d6b9bf5802d9a2055d170e6eb195ad4125066d4214b8",
+    "hash": "6fb1124d187b4dc58a396692fd4d662b16939c9d39ee3e70178cd73c56d04f36",
     "outputs": [
+      "emergency-storm-damage-tree-removal-royal-oak-mi-480w-360h.avif",
+      "emergency-storm-damage-tree-removal-royal-oak-mi-480w-360h.webp",
       "emergency-storm-damage-tree-removal-royal-oak-mi-800w-600h.avif",
       "emergency-storm-damage-tree-removal-royal-oak-mi-800w-600h.webp",
       "emergency-storm-damage-tree-removal-royal-oak-mi-1200w-900h.avif",
@@ -36,8 +44,10 @@
     ]
   },
   "hollow-tree-removal-berlin-mi": {
-    "hash": "1b6bbd643861af205f7766245dae0597283364026244e2ded80ec4ef1d476bb9",
+    "hash": "da155e0bfe9dca3d2b2a4c2e4816c130420c6c2f03f245b37085a49369928a8c",
     "outputs": [
+      "hollow-tree-removal-berlin-mi-480w-640h.avif",
+      "hollow-tree-removal-berlin-mi-480w-640h.webp",
       "hollow-tree-removal-berlin-mi-800w-1067h.avif",
       "hollow-tree-removal-berlin-mi-800w-1067h.webp",
       "hollow-tree-removal-berlin-mi-1200w-1600h.avif",
@@ -45,8 +55,10 @@
     ]
   },
   "large-tree-removal-ira-township-mi": {
-    "hash": "b1848cd5193a46b71cd0da18f057bca99ba8080f1de892dc49cffc990b327440",
+    "hash": "6f450ab14341be6177115b0b9dc5a69592b78fdb6aa086fe88631850e5fd572a",
     "outputs": [
+      "large-tree-removal-ira-township-mi-480w-640h.avif",
+      "large-tree-removal-ira-township-mi-480w-640h.webp",
       "large-tree-removal-ira-township-mi-800w-1067h.avif",
       "large-tree-removal-ira-township-mi-800w-1067h.webp",
       "large-tree-removal-ira-township-mi-1200w-1600h.avif",
@@ -54,8 +66,10 @@
     ]
   },
   "lexington-mi-tree-removal": {
-    "hash": "2e568a9cd8400977617cefc5b219c8b6a1ec6aa92111b4721e2467375a7af729",
+    "hash": "536bcfc75bdeb9936e4436bec9bdc71febb82947f52ca16721128575ec30d776",
     "outputs": [
+      "lexington-mi-tree-removal-480w-480h.avif",
+      "lexington-mi-tree-removal-480w-480h.webp",
       "lexington-mi-tree-removal-800w-800h.avif",
       "lexington-mi-tree-removal-800w-800h.webp",
       "lexington-mi-tree-removal-1200w-1200h.avif",
@@ -63,8 +77,10 @@
     ]
   },
   "professional-arborist-climbing-tree-removal-macomb-county": {
-    "hash": "0a1d36005f04bf8fca9db9ba1f5ba84d656fe2c1d75aa7584467d2aedd1c068a",
+    "hash": "38888389a45352dd1c527c32c0df7676113905e50242efdbdd5db0ad6cc6cf92",
     "outputs": [
+      "professional-arborist-climbing-tree-removal-macomb-county-480w-600h.avif",
+      "professional-arborist-climbing-tree-removal-macomb-county-480w-600h.webp",
       "professional-arborist-climbing-tree-removal-macomb-county-800w-1000h.avif",
       "professional-arborist-climbing-tree-removal-macomb-county-800w-1000h.webp",
       "professional-arborist-climbing-tree-removal-macomb-county-1200w-1500h.avif",
@@ -72,8 +88,10 @@
     ]
   },
   "stump-grinding-and-root-removal": {
-    "hash": "94c1cb32ae60a022343874cb195eae084b07fe58a29874a39c305e8471be2084",
+    "hash": "2c0a7a431639cc9aed0c0eda8e51b0a5151d9126907635619e10feda24dc218b",
     "outputs": [
+      "stump-grinding-and-root-removal-480w-270h.avif",
+      "stump-grinding-and-root-removal-480w-270h.webp",
       "stump-grinding-and-root-removal-800w-450h.avif",
       "stump-grinding-and-root-removal-800w-450h.webp",
       "stump-grinding-and-root-removal-1200w-675h.avif",
@@ -81,8 +99,10 @@
     ]
   },
   "technical-tree-removal-shelby-twp-mi": {
-    "hash": "2daac8215d8052d05964598d93041e657b7191117fe968de32bcd7fe32fa80fa",
+    "hash": "9c2126c35f3c7ef208f62c7a32ed78ee2a5d6ffe72de905cec1668bacfe3ac13",
     "outputs": [
+      "technical-tree-removal-shelby-twp-mi-480w-720h.avif",
+      "technical-tree-removal-shelby-twp-mi-480w-720h.webp",
       "technical-tree-removal-shelby-twp-mi-800w-1200h.avif",
       "technical-tree-removal-shelby-twp-mi-800w-1200h.webp",
       "technical-tree-removal-shelby-twp-mi-1200w-1800h.avif",
@@ -90,8 +110,10 @@
     ]
   },
   "tree-removal-services-macomb-county": {
-    "hash": "917361d65e56c5a3d44dcda29299faccd707a82e8e4fcdc07ba0fa6bcfa9820f",
+    "hash": "3c311eab860d60a4770e5dfb44590385bbf07dfbae1f1cc59c40800b5cdcf16a",
     "outputs": [
+      "tree-removal-services-macomb-county-480w-270h.avif",
+      "tree-removal-services-macomb-county-480w-270h.webp",
       "tree-removal-services-macomb-county-800w-450h.avif",
       "tree-removal-services-macomb-county-800w-450h.webp",
       "tree-removal-services-macomb-county-1200w-675h.avif",
