@@ -3,8 +3,8 @@ import crypto from 'crypto';
 import fs from 'fs/promises';
 import path from 'path';
 
-// Limit sharp to single thread to avoid memory/CPU thread starvation in sandboxed containers
-sharp.concurrency(1);
+// Use full CPU concurrency in GitHub Actions; keep single-threaded in sandboxed containers
+sharp.concurrency(process.env.GITHUB_ACTIONS ? 0 : 1);
 
 // --- PATH & PIPELINE CONFIGURATION ---
 const INPUT_DIR = path.resolve(process.cwd(), 'src/img');
