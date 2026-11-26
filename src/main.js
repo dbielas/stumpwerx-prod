@@ -123,20 +123,6 @@ if (mobileMenu && mobileMenuBtn && closeMenuBtn) {
   mobileMenuLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
 }
 
-// Hero entrance animations
-const heroContent = document.querySelector('#hero-content');
-if (heroContent) {
-  gsap.from(heroContent.children, {
-    y: 40,
-    scale: 0.98,
-    opacity: 0,
-    duration: 1.2,
-    stagger: 0.15,
-    ease: 'expo.out',
-    delay: 0.4
-  });
-}
-
 // Fade-in animations on scroll using GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
@@ -369,7 +355,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Run Init Actions
-setupGallery().then(() => {
-  ScrollTrigger.refresh();
-});
+// Defer gallery lightbox chunk loading until after initial paint & hero reveal
+const initDeferredGallery = () => {
+  setupGallery().then(() => {
+    ScrollTrigger.refresh();
+  });
+};
+
+if (document.readyState === 'complete') {
+  initDeferredGallery();
+} else {
+  window.addEventListener('load', () => {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(initDeferredGallery, { timeout: 1500 });
+    } else {
+      setTimeout(initDeferredGallery, 250);
+    }
+  }, { once: true });
+}

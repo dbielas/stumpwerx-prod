@@ -57,7 +57,7 @@
 }
 
 .btn-ghost {
-  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap font-sans text-xs md:text-sm font-semibold tracking-wider uppercase min-h-[44px] px-6 py-3 md:px-8 border border-brand-text/40 bg-brand-surface/45 backdrop-blur-sm text-brand-text [&_svg]:!stroke-[2.25] rounded-md transition-all duration-200 hover:border-brand-text/80 hover:bg-brand-surface/70 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface;
+  @apply inline-flex items-center justify-center gap-2 whitespace-nowrap font-sans text-xs md:text-sm font-semibold tracking-wider uppercase min-h-[44px] px-6 py-3 md:px-8 border border-brand-text/40 bg-brand-surface/65 text-brand-text [&_svg]:!stroke-[2.25] rounded-md transition-all duration-200 hover:border-brand-text/80 hover:bg-brand-surface/85 hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface;
 }
 
 .btn-outline {
@@ -123,4 +123,34 @@
   color: var(--color-brand-text);
   font-family: var(--font-sans);
   line-height: 1.6;
+}
+
+/* Compositor-only hero intro reveal (runs off main thread for smooth mobile/tablet paint) */
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #hero-content > * {
+    animation: hero-reveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  #hero-content > *:nth-child(2) {
+    animation-delay: 70ms;
+  }
+  #hero-content > *:nth-child(3) {
+    animation-delay: 140ms;
+  }
+  #hero-content > *:nth-child(4) {
+    animation-delay: 210ms;
+  }
+  #hero-content > *:nth-child(5) {
+    animation-delay: 280ms;
+  }
 }
