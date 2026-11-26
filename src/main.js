@@ -13,7 +13,7 @@ window.addEventListener('error', e => {
     e.stopImmediatePropagation();
     e.preventDefault();
   }
-});
+}, true);
 
 // Initialize specific icons
 createIcons({
@@ -177,6 +177,9 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
 
   // Project gallery photos with subtle, quick stagger (targets <a> to avoid Masonry/img hover conflict)
   revealBlocks('#project-gallery .grid-item a', { y: 20, duration: 0.5, stagger: 0.06, start: 'top 90%' });
+
+  // Shared reveal hook for service subpages
+  revealBlocks('.reveal-block');
 });
 
 window.addEventListener('load', () => {
@@ -188,6 +191,7 @@ const reviewsWidgetStage = document.getElementById('reviews-widget-stage');
 const reviewsWidgetInner = reviewsWidgetStage ? reviewsWidgetStage.firstElementChild : null;
 if (reviewsWidgetStage && reviewsWidgetInner) {
   let reviewsResizeTimeout;
+  let reviewsRafId;
   let maxReviewsHeight = 0;
   let lastViewportWidth = window.innerWidth;
 
@@ -213,7 +217,12 @@ if (reviewsWidgetStage && reviewsWidgetInner) {
     }
   };
 
-  const reviewsObserver = new ResizeObserver(syncReviewsStageHeight);
+  const scheduleSyncReviewsStageHeight = () => {
+    cancelAnimationFrame(reviewsRafId);
+    reviewsRafId = requestAnimationFrame(syncReviewsStageHeight);
+  };
+
+  const reviewsObserver = new ResizeObserver(scheduleSyncReviewsStageHeight);
   reviewsObserver.observe(reviewsWidgetInner);
 
   window.addEventListener('resize', () => {
@@ -221,7 +230,7 @@ if (reviewsWidgetStage && reviewsWidgetInner) {
     lastViewportWidth = window.innerWidth;
     maxReviewsHeight = 0;
     reviewsWidgetStage.style.minHeight = '';
-    requestAnimationFrame(syncReviewsStageHeight);
+    scheduleSyncReviewsStageHeight();
   });
 }
 
