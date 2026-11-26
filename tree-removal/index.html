@@ -90,7 +90,7 @@
         <a href="/#services" class="nav-link transition-colors duration-500 text-brand-primary">Services</a>
         <a href="/#gallery" class="nav-link transition-colors duration-500">Projects</a>
         <a href="/#reviews" class="nav-link transition-colors duration-500">Reviews</a>
-        <a href="/#contact" class="nav-link transition-colors duration-500">Contact</a>
+        <a href="#contact" class="nav-link transition-colors duration-500">Contact</a>
       </div>
 
       <div class="flex-1 flex items-center justify-end">
@@ -116,7 +116,7 @@
     <a href="/#services" class="text-3xl font-serif text-brand-primary">Services</a>
     <a href="/#gallery" class="text-3xl font-serif">Projects</a>
     <a href="/#reviews" class="text-3xl font-serif">Reviews</a>
-    <a href="/#contact" class="text-3xl font-serif">Contact</a>
+    <a href="#contact" class="text-3xl font-serif">Contact</a>
     <a href="tel:2486069731" class="btn-primary px-12">CALL (248) 606-9731</a>
   </div>
 
@@ -154,7 +154,7 @@
         Controlled, high-precision removals for oversized, leaning, and tight-space trees—backed by full lawn protection and complete debris haul-away.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-3 md:gap-4">
-        <a href="/#contact" class="btn-primary">Request a Free Estimate</a>
+        <a href="#contact" class="btn-primary">Request a Free Estimate</a>
         <a href="tel:2486069731" class="btn-ghost">
           <i data-lucide="phone" class="w-4 h-4"></i>
           (248) 606-9731
@@ -287,25 +287,65 @@
       </div>
     </section>
 
-    <!-- Other Services + CTA -->
-    <section class="py-20 md:py-24 px-6 md:px-12 bg-brand-surface border-t border-brand-surface-light10">
+    <!-- Contact + Other Services -->
+    <section id="contact" class="py-20 md:py-24 px-6 md:px-12 bg-brand-surface border-t border-brand-surface-light10 scroll-mt-20">
       <div class="max-w-7xl mx-auto space-y-16">
-        <div class="reveal-block bg-brand-surface-light border border-brand-surface-light10 rounded-lg p-8 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-          <div class="space-y-3 max-w-2xl">
-            <span class="text-brand-secondary font-sans font-semibold text-xs tracking-widest uppercase">Free Estimates Across 5 Counties</span>
-            <h2 class="text-3xl md:text-4xl">Ready to Clear a Hazardous Tree?</h2>
-            <p class="text-brand-text-muted">Call our Macomb crew directly or jump to our contact section to schedule a walkthrough.</p>
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div class="reveal-block lg:col-span-5 space-y-5">
+            <div class="flex items-center gap-4">
+              <span class="h-px w-12 bg-brand-secondary"></span>
+              <span class="text-brand-secondary font-sans font-semibold text-xs tracking-widest uppercase">Free Estimates Across 5 Counties</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl leading-tight">Ready to Clear a Hazardous Tree?</h2>
+            <p class="text-brand-text-muted leading-relaxed">
+              Call or email our Macomb crew to schedule an on-site walkthrough. Not sure if you’re in our range? Give us a shout—we frequently travel for larger removals.
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <a href="tel:2486069731" class="btn-primary">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                (248) 606-9731
+              </a>
+            </div>
           </div>
-          <div class="flex flex-wrap items-center gap-4 shrink-0">
-            <a href="tel:2486069731" class="btn-primary">
-              <i data-lucide="phone" class="w-4 h-4"></i>
-              (248) 606-9731
-            </a>
-            <a href="/#contact" class="btn-outline">Contact Us</a>
+
+          <div class="reveal-block lg:col-span-7 bg-brand-surface-light border border-brand-surface-light10 rounded-lg p-8 md:p-10">
+            <div class="grid sm:grid-cols-2 gap-8">
+              <a href="https://goo.gl/maps/CU6HbRYK1hCP9T629" target="_blank" rel="noopener noreferrer" class="group flex items-start gap-4 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <i data-lucide="map-pin" class="w-5 h-5 text-brand-primary shrink-0 mt-1"></i>
+                <div>
+                  <h3 class="font-sans text-base font-bold text-brand-text group-hover:text-brand-primary transition-colors">Our Location</h3>
+                  <p class="text-sm text-brand-text-muted mt-1">Macomb, MI 48044</p>
+                </div>
+              </a>
+
+              <a href="tel:2486069731" class="group flex items-start gap-4 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <i data-lucide="phone" class="w-5 h-5 text-brand-primary shrink-0 mt-1"></i>
+                <div>
+                  <h3 class="font-sans text-base font-bold text-brand-text group-hover:text-brand-primary transition-colors">Phone Number</h3>
+                  <p class="text-sm text-brand-text-muted mt-1">(248) 606-9731</p>
+                </div>
+              </a>
+
+              <a href="mailto:hello@stumpwerxtree.com" class="group flex items-start gap-4 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
+                <i data-lucide="mail" class="w-5 h-5 text-brand-primary shrink-0 mt-1"></i>
+                <div>
+                  <h3 class="font-sans text-base font-bold text-brand-text group-hover:text-brand-primary transition-colors">Email Us</h3>
+                  <p class="text-sm text-brand-text-muted mt-1 break-all">hello@stumpwerxtree.com</p>
+                </div>
+              </a>
+
+              <div class="flex items-start gap-4">
+                <i data-lucide="clock" class="w-5 h-5 text-brand-primary shrink-0 mt-1"></i>
+                <div>
+                  <h3 class="font-sans text-base font-bold text-brand-text">Business Hours</h3>
+                  <p class="text-sm text-brand-text-muted mt-1">Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="reveal-block space-y-6">
+        <div class="reveal-block pt-8 border-t border-brand-surface-light10 space-y-6">
           <p class="text-xs uppercase tracking-widest font-semibold text-brand-text-muted">Explore Other Services</p>
           <div class="grid md:grid-cols-2 gap-6">
             <a href="/stump-grinding/" class="group bg-brand-surface-light border border-brand-surface-light10 rounded-lg p-6 flex items-center justify-between gap-4 hover:border-brand-secondary transition-colors duration-200">
