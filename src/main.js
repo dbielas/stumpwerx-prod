@@ -74,43 +74,58 @@ if (navbar && brandLogo) {
 
 // Mobile menu toggle
 if (mobileMenu && mobileMenuBtn && closeMenuBtn) {
+  const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   mobileMenuBtn.addEventListener('click', () => {
     const navItems = mobileMenu.querySelectorAll('a');
-    
-    // Kill any running animations instantly
     gsap.killTweensOf([mobileMenu, navItems]);
-    
-    // Pull the structural display layer out BEFORE running the animation track
+
     mobileMenu.classList.remove('translate-x-full');
+
+    if (prefersReducedMotion()) {
+      gsap.set(mobileMenu, { clearProps: 'transform' });
+      gsap.set(navItems, { clearProps: 'transform,opacity,transition' });
+      return;
+    }
+
     gsap.set(navItems, { transition: 'none' });
 
     const tl = gsap.timeline();
-    tl.fromTo(mobileMenu, 
-      { x: '100%' }, 
-      { x: '0%', duration: 0.5, ease: 'power3.out' }
-    )
-    .fromTo(navItems, 
-      { y: 20, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.4, 
-        stagger: 0.08, 
+    tl.fromTo(
+      mobileMenu,
+      { x: '100%' },
+      { x: '0%', duration: 0.35, ease: 'power3.out', force3D: true }
+    ).fromTo(
+      navItems,
+      { y: 16, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.35,
+        stagger: 0.05,
         ease: 'power3.out',
-        clearProps: 'all' // Cleanly hands back sizing to CSS styles
+        force3D: true,
+        clearProps: 'transition'
       },
-      '-=0.2'
+      '-=0.18'
     );
   });
 
   const closeMobileMenu = () => {
     const navItems = mobileMenu.querySelectorAll('a');
     gsap.killTweensOf([mobileMenu, navItems]);
-    
+
+    if (prefersReducedMotion()) {
+      mobileMenu.classList.add('translate-x-full');
+      gsap.set(mobileMenu, { clearProps: 'transform' });
+      return;
+    }
+
     gsap.to(mobileMenu, {
       x: '100%',
-      duration: 0.4,
-      ease: 'power3.in',
+      duration: 0.28,
+      ease: 'power3.out',
+      force3D: true,
       onComplete: () => {
         mobileMenu.classList.add('translate-x-full');
         gsap.set(mobileMenu, { clearProps: 'transform' });
