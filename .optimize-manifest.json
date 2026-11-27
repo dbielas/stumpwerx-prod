@@ -54,6 +54,17 @@
       "emergency-storm-damage-tree-removal-royal-oak-mi-1200w-900h.webp"
     ]
   },
+  "hero-tree-canopy-macomb-mi": {
+    "hash": "35d9405f3253e2f9aaf4d825e774c3f97187ffecc0363e4db08834a13e7ac3cc",
+    "outputs": [
+      "hero-tree-canopy-macomb-mi-800w-1200h.avif",
+      "hero-tree-canopy-macomb-mi-800w-1200h.webp",
+      "hero-tree-canopy-macomb-mi-1200w-1800h.avif",
+      "hero-tree-canopy-macomb-mi-1200w-1800h.webp",
+      "hero-tree-canopy-macomb-mi-1920w-2880h.avif",
+      "hero-tree-canopy-macomb-mi-1920w-2880h.webp"
+    ]
+  },
   "hollow-tree-removal-berlin-mi": {
     "hash": "c08994973b90509173c9090cc82dcfbc472ff29b0e9d6917ebb62607e4b537ec",
     "outputs": [

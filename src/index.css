@@ -154,3 +154,18 @@
     animation-delay: 280ms;
   }
 }
+
+@keyframes brand-gear-intro {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  #brand-logo svg {
+    animation: brand-gear-intro 0.9s cubic-bezier(0.22, 1, 0.36, 1) 150ms backwards;
+  }
+}

@@ -18,6 +18,11 @@ const WEBP_QUALITY = 75;
 const VALID_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.tiff']);
 const FORCE = process.argv.includes('--force');
 
+// Optional per-image width overrides (images not listed here use TARGET_WIDTHS)
+const WIDTH_OVERRIDES = {
+  'hero-tree-canopy-macomb-mi': [800, 1200, 1920],
+};
+
 // Optional aspect-ratio overrides (images not listed here use their natural ratio)
 const ASPECT_RATIOS = {
   'tree-removal-services-macomb-county': 16 / 9,
@@ -71,13 +76,13 @@ async function resolveAspectRatio(filename, sourceBuffer) {
   return width / height;
 }
 
-function computeHash(sourceBuffer, outputs) {
+function computeHash(sourceBuffer, widths, outputs) {
   return crypto
     .createHash('sha256')
     .update(sourceBuffer)
     .update(
       JSON.stringify({
-        widths: TARGET_WIDTHS,
+        widths,
         avifQuality: AVIF_QUALITY,
         avifEffort: AVIF_EFFORT,
         webpQuality: WEBP_QUALITY,
@@ -94,8 +99,9 @@ async function processImage(fileEntry, prevEntry, manifestExists) {
 
   const sourceBuffer = await fs.readFile(inputPath);
   const aspectRatio = await resolveAspectRatio(filename, sourceBuffer);
+  const widths = WIDTH_OVERRIDES[filename] || TARGET_WIDTHS;
 
-  const variants = TARGET_WIDTHS.map((width) => {
+  const variants = widths.map((width) => {
     const height = Math.round(width / aspectRatio);
     const baseOutputName = `${filename}-${width}w-${height}h`;
     return {
@@ -108,7 +114,7 @@ async function processImage(fileEntry, prevEntry, manifestExists) {
   });
 
   const expectedOutputs = variants.flatMap((v) => [v.avifFile, v.webpFile]);
-  const hash = computeHash(sourceBuffer, expectedOutputs);
+  const hash = computeHash(sourceBuffer, widths, expectedOutputs);
   const outputsExist = await allFilesExist(expectedOutputs);
 
   if (!FORCE && outputsExist && prevEntry?.hash === hash) {

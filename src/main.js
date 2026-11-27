@@ -46,30 +46,28 @@ const grid = document.querySelector('.grid-gallery');
 
 // --- NAVBAR SCROLL STATE TRACKING ---
 if (navbar && brandLogo) {
-  // 1. Extract the layout mutation logic into a standalone function
+  let isScrolled = null;
+
   const handleNavbarState = () => {
-    if (window.scrollY > 50) {
+    const scrolled = window.scrollY > 50;
+    if (scrolled === isScrolled) return;
+    isScrolled = scrolled;
+
+    if (scrolled) {
       navbar.classList.add('bg-brand-surface/95', 'backdrop-blur-md', 'shadow-2xl', 'py-3');
       navbar.classList.remove('py-4');
       brandLogo.classList.add('text-brand-primary');
-      navLinks.forEach(link => {
-        link.classList.add('text-brand-text');
-      });
+      navLinks.forEach(link => link.classList.add('text-brand-text'));
     } else {
       navbar.classList.remove('bg-brand-surface/95', 'backdrop-blur-md', 'shadow-2xl', 'py-3');
       navbar.classList.add('py-4');
       brandLogo.classList.remove('text-brand-primary');
-      navLinks.forEach(link => {
-        link.classList.remove('text-brand-text');
-      });
+      navLinks.forEach(link => link.classList.remove('text-brand-text'));
     }
   };
 
-  // 2. Run immediately on script execution to check if the user loaded mid-page
   handleNavbarState();
-
-  // 3. Attach the exact same listener loop to catch active scrolling
-  window.addEventListener('scroll', handleNavbarState);
+  window.addEventListener('scroll', handleNavbarState, { passive: true });
 }
 
 // Mobile menu toggle
@@ -362,15 +360,34 @@ if (form && result) {
 
 // Scroll to top button functionality
 if (scrollToTopBtn) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > (document.documentElement.scrollHeight / 3)) {
+  let scrollTopThreshold = document.documentElement.scrollHeight / 3;
+  let isScrollTopVisible = null;
+
+  const updateScrollTopThreshold = () => {
+    scrollTopThreshold = document.documentElement.scrollHeight / 3;
+  };
+
+  const handleScrollToTopState = () => {
+    const visible = window.scrollY > scrollTopThreshold;
+    if (visible === isScrollTopVisible) return;
+    isScrollTopVisible = visible;
+
+    if (visible) {
       scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
       scrollToTopBtn.classList.add('opacity-100', 'translate-y-0');
     } else {
       scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0');
       scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
     }
-  });
+  };
+
+  handleScrollToTopState();
+  window.addEventListener('scroll', handleScrollToTopState, { passive: true });
+  window.addEventListener('load', () => {
+    updateScrollTopThreshold();
+    handleScrollToTopState();
+  }, { once: true });
+  window.addEventListener('resize', updateScrollTopThreshold, { passive: true });
 
   scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
