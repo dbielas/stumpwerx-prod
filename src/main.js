@@ -80,6 +80,7 @@ if (mobileMenu && mobileMenuBtn && closeMenuBtn) {
     const navItems = mobileMenu.querySelectorAll('a');
     gsap.killTweensOf([mobileMenu, navItems]);
 
+    if (navbar) navbar.classList.add('opacity-0', 'pointer-events-none');
     mobileMenu.classList.remove('translate-x-full');
 
     if (prefersReducedMotion()) {
@@ -114,6 +115,8 @@ if (mobileMenu && mobileMenuBtn && closeMenuBtn) {
   const closeMobileMenu = () => {
     const navItems = mobileMenu.querySelectorAll('a');
     gsap.killTweensOf([mobileMenu, navItems]);
+
+    if (navbar) navbar.classList.remove('opacity-0', 'pointer-events-none');
 
     if (prefersReducedMotion()) {
       mobileMenu.classList.add('translate-x-full');

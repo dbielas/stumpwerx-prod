@@ -21,6 +21,17 @@
       "commercial-tree-trimming-new-baltimore-mi-1200w-1800h.webp"
     ]
   },
+  "crane-assisted-tree-removal-macomb-county-mi": {
+    "hash": "62943a07f8eb8545d0fcfee219e5d009d17a960226c1775a5df2c8cd62cb0c1b",
+    "outputs": [
+      "crane-assisted-tree-removal-macomb-county-mi-640w-853h.avif",
+      "crane-assisted-tree-removal-macomb-county-mi-640w-853h.webp",
+      "crane-assisted-tree-removal-macomb-county-mi-800w-1067h.avif",
+      "crane-assisted-tree-removal-macomb-county-mi-800w-1067h.webp",
+      "crane-assisted-tree-removal-macomb-county-mi-1200w-1600h.avif",
+      "crane-assisted-tree-removal-macomb-county-mi-1200w-1600h.webp"
+    ]
+  },
   "emergency-storm-damage-cleanup": {
     "hash": "90ec26fbaf67855a107bc5a248a4a898f15b0ea9ca76ae43a4fff962bd63c28e",
     "outputs": [
@@ -54,6 +65,28 @@
       "hollow-tree-removal-berlin-mi-1200w-1600h.webp"
     ]
   },
+  "large-stump-grinding-deckerville-mi": {
+    "hash": "ce28f306fc26048378407867afe1ffb1752b1562cb8cd5d21372aa34ad7bef52",
+    "outputs": [
+      "large-stump-grinding-deckerville-mi-640w-853h.avif",
+      "large-stump-grinding-deckerville-mi-640w-853h.webp",
+      "large-stump-grinding-deckerville-mi-800w-1067h.avif",
+      "large-stump-grinding-deckerville-mi-800w-1067h.webp",
+      "large-stump-grinding-deckerville-mi-1200w-1600h.avif",
+      "large-stump-grinding-deckerville-mi-1200w-1600h.webp"
+    ]
+  },
+  "large-tree-removal-cleanup-bloomfield-mi": {
+    "hash": "ce5003841756c99a27300f46e3eff75479df798906c6c7c74de5a007a15fc9a2",
+    "outputs": [
+      "large-tree-removal-cleanup-bloomfield-mi-640w-480h.avif",
+      "large-tree-removal-cleanup-bloomfield-mi-640w-480h.webp",
+      "large-tree-removal-cleanup-bloomfield-mi-800w-600h.avif",
+      "large-tree-removal-cleanup-bloomfield-mi-800w-600h.webp",
+      "large-tree-removal-cleanup-bloomfield-mi-1200w-900h.avif",
+      "large-tree-removal-cleanup-bloomfield-mi-1200w-900h.webp"
+    ]
+  },
   "large-tree-removal-ira-township-mi": {
     "hash": "19f15f5d455089dc87695c9052bab3b7f4163f9281f91bb07fe69199e5539bad",
     "outputs": [
@@ -85,6 +118,17 @@
       "professional-arborist-climbing-tree-removal-macomb-county-800w-1000h.webp",
       "professional-arborist-climbing-tree-removal-macomb-county-1200w-1500h.avif",
       "professional-arborist-climbing-tree-removal-macomb-county-1200w-1500h.webp"
+    ]
+  },
+  "storm-damage-tree-cleanup-utica-mi": {
+    "hash": "048a087b959a100ef1fdf10e71636fa5416e0826de2e3a4a3bb8cd7f460856fa",
+    "outputs": [
+      "storm-damage-tree-cleanup-utica-mi-640w-853h.avif",
+      "storm-damage-tree-cleanup-utica-mi-640w-853h.webp",
+      "storm-damage-tree-cleanup-utica-mi-800w-1067h.avif",
+      "storm-damage-tree-cleanup-utica-mi-800w-1067h.webp",
+      "storm-damage-tree-cleanup-utica-mi-1200w-1600h.avif",
+      "storm-damage-tree-cleanup-utica-mi-1200w-1600h.webp"
     ]
   },
   "stump-grinding-and-root-removal": {
