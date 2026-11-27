@@ -404,21 +404,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Defer gallery lightbox chunk loading until after initial paint & hero reveal
-const initDeferredGallery = () => {
-  setupGallery().then(() => {
-    ScrollTrigger.refresh();
-  });
-};
-
-if (document.readyState === 'complete') {
-  initDeferredGallery();
-} else {
-  window.addEventListener('load', () => {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(initDeferredGallery, { timeout: 1500 });
-    } else {
-      setTimeout(initDeferredGallery, 250);
+// Hydrate gallery thumbnails & PhotoSwipe lightbox only when scrolling near the gallery
+const galleryEl = document.getElementById('project-gallery');
+if (galleryEl) {
+  const lazyPictures = galleryEl.querySelectorAll('picture[data-lazy-picture]');
+  const hydratePicture = (picture) => {
+    picture.querySelectorAll('source[data-srcset]').forEach((source) => {
+      source.srcset = source.dataset.srcset;
+      source.removeAttribute('data-srcset');
+    });
+    const img = picture.querySelector('img[data-src]');
+    if (img) {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
     }
-  }, { once: true });
+    picture.removeAttribute('data-lazy-picture');
+  };
+
+  let galleryInitStarted = false;
+  const initDeferredGallery = () => {
+    if (galleryInitStarted) return;
+    galleryInitStarted = true;
+    setupGallery().then(() => {
+      ScrollTrigger.refresh();
+    });
+  };
+
+  if ('IntersectionObserver' in window) {
+    const pictureObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        hydratePicture(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '300px 0px' });
+
+    lazyPictures.forEach((picture) => pictureObserver.observe(picture));
+
+    const lightboxObserver = new IntersectionObserver((entries, observer) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        initDeferredGallery();
+        observer.disconnect();
+      }
+    }, { rootMargin: '500px 0px' });
+
+    lightboxObserver.observe(galleryEl);
+  } else {
+    lazyPictures.forEach(hydratePicture);
+    initDeferredGallery();
+  }
 }
